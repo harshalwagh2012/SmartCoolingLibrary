@@ -10,18 +10,23 @@ The project is centered around a series of thermal architectures: a simple singl
 The simulations provide insight into how processors heat up when left uncooled, how quickly temperatures can stabilize when fluid circulation is introduced, and how a shared loop must operate when multiple processors are positioned vertically in a rack-like structure. This progression makes it possible to observe thermal behavior at three levels of complexity while maintaining a consistent modeling framework.
 
 ## Model Architecture
-### Single-Processor Thermal Loop (Passive Cooling)
+### Single Processor Thermal Loop 
 
 The first configuration is the simplest representation of the system. A processor with internal heat generation is connected to a surrounding loop of fluid pipes, but no pump or forced circulation is included. Because the coolant remains stationary, the processor temperature rises continuously as heat accumulates in the solid and fluid domains. This model establishes a baseline for comparison and highlights the limitations of passive cooling for high-power electronic components.
+![Single Processor Thermal Loop](Pictures/Single_processor_thermal_Loop.png)
+![Single Processor Thermal Loop Result](Pictures/Single_processor_thermal_Loop_Result.png)
 
-### Single-Processor Loop With Pump (Active Cooling)
+### Single Processor Loop With Pump 
 
 To overcome the thermal limitations of passive cooling, this second configuration introduces a pump into the loop. Coolant is circulated at a constant speed, transporting heat away from the processor and distributing it through the pipes. The behavior of the system changes significantly: the processor still heats up initially, but the rate of temperature rise is slower and a lower equilibrium temperature is eventually reached. This model demonstrates how even a simple pump can dramatically change the thermal balance of the system by enabling forced convection.
+![Single Processor Loop With Pump](Pictures/Single_processor_Loop_with_pump.png)
+![Single Processor Loop With Pump Result](Pictures/Single_processor_Loop_with_pump_result.png)
 
-### Four-Story Data Center Rack (Active Cooling, Multi-Processor)
+### Four Story Data Center Rack 
 
-The final configuration scales the system into a multi-processor data center rack. Each story contains one processor, its local set of heat-exchanging pipes, and connections to both internal and ambient temperature sources. All four stories are connected to the same pump-driven coolant loop, which allows the model to represent how thermal loads accumulate and interact across different levels of a rack. This environment makes it possible to study how coolant flow is distributed, how upstream processors affect downstream temperatures, and how pump capacity must increase to support additional hardware.\
-
+The final configuration scales the system into a multi-processor data center rack. Each story contains one processor, its local set of heat-exchanging pipes, and connections to both internal and ambient temperature sources. All four stories are connected to the same pump-driven coolant loop, which allows the model to represent how thermal loads accumulate and interact across different levels of a rack. This environment makes it possible to study how coolant flow is distributed, how upstream processors affect downstream temperatures, and how pump capacity must increase to support additional hardware.
+![Four Story Data Center Rack](Pictures/Four_Story_Data_center_rack.png)
+![Four Story Data Center Rack Result](Pictures/Four_Story_Data_center_rack_result.png)
 
 ## Getting Started
 
